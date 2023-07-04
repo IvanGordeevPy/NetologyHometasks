@@ -5,10 +5,21 @@
     <title>Рецепты</title>
 </head>
 <body>
+<p>Выбранное количество порций блюда {{name}}: {{servings}}</p>
 {% for ingredient, amount in recipe.items %}
     <p>{{ ingredient }}: {{ amount }}</p>
 {% empty %}
     <p>Такого рецепта не знаю :(</p>
+{% endfor %}
+
+<p>Изменить количество порций на:</p>
+{% for servings_num in servings_dict %}
+    <a href="?servings={{ servings_num }}">{{ servings_num }}</a>
+{% endfor %}
+
+<p>Другие доступные рецепты:</p>
+{% for recipe in other_recipies %}
+    <a href="/{{ recipe }}">{{recipe}}</a>
 {% endfor %}
 </body>
 </html>

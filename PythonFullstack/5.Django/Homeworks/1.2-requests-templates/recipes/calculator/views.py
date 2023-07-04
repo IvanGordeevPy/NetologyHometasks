@@ -19,6 +19,37 @@ DATA = {
     # можете добавить свои рецепты ;)
 }
 
+def recipes(request, name):
+    other_recipies = [x for x in list(DATA.keys()) if x != name]
+    if name in DATA:
+        data = DATA[name]
+        servings = int(request.GET.get('servings', 1))
+        servings_dict = list(range(1,11))
+        servings_dict.remove(servings)
+        if servings != 1:
+            ing_dict = dict()
+            for ingredient, amount in data.items():
+                new_value = amount * servings
+                ing_dict[ingredient] = new_value
+            context = {
+                'name': name,
+                'recipe': ing_dict,
+                'servings': servings,
+                'other_recipies': other_recipies,
+                'servings_dict': servings_dict,
+            }
+        else:
+            context = {
+                'name': name,
+                'recipe': data,
+                'servings': servings,
+                'other_recipies': other_recipies,
+                'servings_dict': servings_dict,
+            }
+    else:
+        context = None
+    return render(request, template_name='calculator/index.html', context=context)
+
 # Напишите ваш обработчик. Используйте DATA как источник данных
 # Результат - render(request, 'calculator/index.html', context)
 # В качестве контекста должен быть передан словарь с рецептом:

@@ -1,7 +1,8 @@
-"""recipes URL Configuration
+"""
+URL configuration for Requests_and_templates project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.2/topics/http/urls/
+    https://docs.djangoproject.com/en/4.2/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -13,11 +14,14 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-
-from calculator.views import recipes
+from Requests.views import hello, sum, django_hello, pagi
+from django.contrib import admin
 from django.urls import path
 
 urlpatterns = [
-    path('<name>/', recipes),
-    # здесь зарегистрируйте вашу view-функцию
+    path('admin/', admin.site.urls),
+    path('hello/', hello),
+    path('sum/<int:op1>/<int:op2>/', sum),
+    path('django_hello', django_hello),
+    path('pagi/', pagi)
 ]
