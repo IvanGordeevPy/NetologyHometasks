@@ -208,7 +208,7 @@ def hello_view(request):
     return HttpResponse('Всем привет! Я Django! ' + msg)
 ```
 
-## **Работа с кодом**
+##**Работа с кодом**##
 ---
 Работа в файлах views.py, urls.py, setting.py, demo.html
 
@@ -225,7 +225,7 @@ def hello(request):
 Метод .get безопасно возвращает значение переменной (если оно не будет передано в запросе, то ничего не сломается)
 Второй параметр функции метода .get задает стандартное значение переменной
 
-### **Конверторы**
+###**Конверторы**###
 В `urlpatterns` можно использовать конверторы для параметров:
 `path('sum/<int:op1>/<int:op2>/', sum),`, если op1 или op2 не будут целыми числами, то sum не будет вызван
 [Стандартные конверторы](https://docs.djangoproject.com/en/3.2/topics/http/urls/#path-converters)
@@ -282,7 +282,7 @@ def user_report(request, id: int, dt: datetime):
    сразу правильные типы и никак иначе
 ```
 
-### **Контекст**
+###**Контекст**###
 В обработчиках файла views.py можно задавать контекст для использования в файле .html:
 ```
 def django_hello(request):
@@ -295,7 +295,7 @@ def django_hello(request):
     return HttpResponse()
 ```
 
-### **Шаблоны**
+###**Шаблоны**###
 Шаблон итерации по объекту:
 ```
 <ul>
@@ -318,7 +318,7 @@ def django_hello(request):
 [Композиция](https://docs.djangoproject.com/en/3.2/ref/templates/builtins/#include)
 [Собственные теги и фильтры](https://docs.djangoproject.com/en/3.1/howto/custom-template-tags/)
 
-### **Пагинация**
+###**Пагинация**###
 `views.py`:
 ```
 CONTENT = [str(i) for i in range(10000)]
