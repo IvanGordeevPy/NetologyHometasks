@@ -1,6 +1,6 @@
 import random
 
-from demo.models import Car, Person
+from demo.models import Car, Person, Order
 from django.http import HttpResponse
 from django.shortcuts import render
 
@@ -28,3 +28,8 @@ def list_person(request):
     person_objects = Person.objects.all()
     people = [f'{p.name}: {p.car}' for p in person_objects]
     return HttpResponse('<br>'.join(people))
+
+def list_orders(request):
+    orders = Order.objects.filter(positions__product__price__lte=600)
+    context = {'orders': orders}
+    return render(request, 'orders.html', context)

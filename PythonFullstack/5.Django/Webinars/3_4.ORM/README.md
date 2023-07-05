@@ -59,7 +59,7 @@ class Car(models.Model):
         return f'{self.brand}, {self.model}: {self.color}'
 ```
 
-##**views.py**##
+##**views.py**
 ```
 import random
 

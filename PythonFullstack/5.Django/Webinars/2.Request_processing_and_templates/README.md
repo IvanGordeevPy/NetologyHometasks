@@ -160,4 +160,4 @@ def pagi(request):
 </html>
 ```
 
-И зарегистрировать в urls.py
+И зарегестрировать в urls.py
