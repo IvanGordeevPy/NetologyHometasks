@@ -71,3 +71,4 @@ Django-проект — это Python приложение. Поэтому мо�
 [Документация Django](https://docs.djangoproject.com/en/4.2/)
 [Учебник](https://developer.mozilla.org/ru/docs/Learn/Server-side/Django)
 [Создание блога](https://tutorial.djangogirls.org/ru/)
+[Типы данных для атрибутов моделей](https://docs.djangoproject.com/en/3.2/ref/models/fields/#model-field-types)
